@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  app:
+    container_name: circleci-workshop-app
+    build:
+      context: .
+      dockerfile: infra/docker/app/Dockerfile
+      target: develop
+    image: circleci-workshop-app/app:develop
+    volumes:
+      - ./:/var/www/circleci-workshop
+    ports:
+      - '8000:8000'
+    tty: true
+    environment:
+      TZ: "Asia/Tokyo"
+      LANG: "ja_JP.UTF-8"
+
+

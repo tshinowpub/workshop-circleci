@@ -1,0 +1,15 @@
+#==========================================================================
+# Develop files
+#==========================================================================
+.idea/
+
+.env
+.env.local
+.env.local.dist
+.git
+.gitignore
+
+.php_cs.cache
+.phpunit.result.cache
+
+readme.md

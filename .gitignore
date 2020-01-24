@@ -1,0 +1,10 @@
+.idea/
+/vendor/
+
+.php_cs.cache
+.phpunit.result.cache
+
+.env
+.env.local
+
+.env.test.local
