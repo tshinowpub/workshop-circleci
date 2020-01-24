@@ -1,7 +1,3 @@
-# PHP CircleCI 2.1 configuration file
-#
-# Check https://circleci.com/docs/2.1/language-php/ for more details
-#
 version: 2.1
 jobs:
   build:
@@ -53,7 +49,7 @@ jobs:
               -e TZ="Asia/Tokyo" \
               -e LANG="ja_JP.UTF-8" \
               -e APP_ENV="test" \
-              circleci-workshop:test composer composer test-all
+              circleci-workshop:test composer test-all
 
   deploy:
     docker:
