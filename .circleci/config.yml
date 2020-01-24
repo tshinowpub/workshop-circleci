@@ -37,7 +37,7 @@ jobs:
               -e TZ="Asia/Tokyo" \
               -e LANG="ja_JP.UTF-8" \
               -e APP_ENV="test" \
-              circleci-workshop:test composer validate-fmt
+              circleci-workshop:test composer validate-fmt && composer validate-static && composer test-all
 
   deploy:
     docker:
