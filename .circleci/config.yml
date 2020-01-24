@@ -29,26 +29,17 @@ jobs:
       - run:
           name: Execute Code Check
           command: |
-            docker run \
-              -e TZ="Asia/Tokyo" \
-              -e LANG="ja_JP.UTF-8" \
-              -e APP_ENV="test" \
-              circleci-workshop:test composer validate-fmt
+            docker run circleci-workshop:test composer validate-fmt
       - run:
           name: Static Analysis
           command: |
-            docker run \
-              -e TZ="Asia/Tokyo" \
-              -e LANG="ja_JP.UTF-8" \
-              -e APP_ENV="test" \
-              circleci-workshop:test composer validate-static
+            docker run circleci-workshop:test composer validate-static
       - run:
           name: Execute Tests
           command: |
             docker run \
-              -e TZ="Asia/Tokyo" \
-              -e LANG="ja_JP.UTF-8" \
-              -e APP_ENV="test" \
+              -e MAIL_USERNAME=$MAIL_USERNAME \
+              -e MAIL_PASSWORD=$MAIL_PASSWORD \
               circleci-workshop:test composer test-all
 
   deploy:
